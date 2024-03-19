@@ -1,0 +1,15 @@
+body {
+  background-color: RGB(224, 224, 224);
+}
+img {
+  max-width: 100;
+  border-radius: 10px;
+  opacity: 0.9;
+  filter: grayscale(.20);
+}
+h1 {
+  color: RGB(153, 204, 255); 
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: underline;
+}
