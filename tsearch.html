@@ -7,49 +7,83 @@
   </head> 
   <body>  
     <h1>Movie Search</h1>
-    <form action="https://www.Google.com/search" method="GET"></form>
-   <p>
-      <label for="searchbox">Movie Search:</label>
-      <input type="text" name="q" id="searchbox">
-   </p>
-   <p>
-      <label for="selectmovie">Favorite Picks:</label>
-      <select name="q" id="Favorites">
-        <option></option>
-        <option value="Wolverine">Wolverine</option>
-        <option value="Spider-Man">Spider-Man</option>
-        <option value="Grown-Ups">Grown-Ups</option>
-        <option value="Fast and Furious">Fast and Furious</option>
-        <option value="Iron-Man">Iron-Man</option>
-      </select>
-  </p>
-<h3>Select a Platform:</h3>
-  <p>
-      <input type="radio" name="newwindow" value="Netflix" id="Netflix">
-      <label for="Netflix"><a href="https://www.netflix.com/">Netflix</a></label>
-  </p>
-  <p>
-    <input type="radio" name="newwindow" value="Disney" id="Disney">
-    <label for="Disney"><a href="https://www.disneyplus.com/">Disney+</a></label>
-  </p>
-  <p>
-    <input type="radio" name="newwindow" value="Prime" id="Prime">
-    <label for="Prime"><a href="https://www.amazon.com/Amazon-Video/b?ie=UTF8&node=2858778011">Amazon Prime Video</a></label>
-  </p>
-  <p>
-    <input type="radio" name="as_sitesearch" value="Hulu" id="Hulu">
-    <label for="Hulu"><a href="https://www.hulu.com/">Hulu</a></label>
-  </p>
-  <p>
-    <input type="radio" name="as_epq" value="Apple" id="Apple">
-    <label for="Apple"><a href="https://www.apple.com/apple-tv-plus/">Apple TV+</a></label>
-  </p>
-  <p>
-    <input type="radio" name="qdr:All" value="All" id="All">
-    <label for="All">Find a Streaming Platform</label>
-  </p>
-  <p>
-    <input type="Submit">
-  </p>
+    <form id="searchForm">
+       <p>
+          <label for="searchbox">Movie Search:</label>
+          <input type="text" name="q" id="searchbox">
+       </p>
+       <p>
+          <label for="selectmovie">Favorite Picks:</label>
+          <select name="q" id="Favorites">
+            <option></option>
+            <option value="Wolverine">Wolverine</option>
+            <option value="Spider-Man">Spider-Man</option>
+            <option value="Grown-Ups">Grown-Ups</option>
+            <option value="Fast and Furious">Fast and Furious</option>
+            <option value="Iron-Man">Iron-Man</option>
+          </select>
+      </p>
+    <h3>Select a Platform:</h3>
+    <p>
+        <input type="radio" name="platform" value="Netflix" id="Netflix">
+        <label for="Netflix">Netflix</label>
+    </p>
+    <p>
+      <input type="radio" name="platform" value="Disney" id="Disney">
+      <label for="Disney">Disney+</label>
+    </p>
+    <p>
+      <input type="radio" name="platform" value="Prime" id="Prime">
+      <label for="Prime">Amazon Prime Video</label>
+    </p>
+    <p>
+      <input type="radio" name="platform" value="Hulu" id="Hulu">
+      <label for="Hulu">Hulu</label>
+    </p>
+    <p>
+      <input type="radio" name="platform" value="Apple" id="Apple">
+      <label for="Apple">Apple TV+</label>
+    </p>
+    <p>
+      <input type="radio" name="platform" value="All" id="All">
+      <label for="All">Find a Streaming Platform</label>
+    </p>
+    <p>
+      <input type="submit" value="Search">
+    </p>
+    </form>
+
+    <script>
+      document.getElementById("searchForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var searchQuery = document.getElementById("searchbox").value;
+        var platform = document.querySelector('input[name="platform"]:checked').value;
+        var searchUrl;
+        
+        switch(platform) {
+          case "Netflix":
+            searchUrl = "https://www.netflix.com/search?q=" + encodeURIComponent(searchQuery);
+            break;
+          case "Disney":
+            searchUrl = "https://www.disneyplus.com/search?q=" + encodeURIComponent(searchQuery);
+            break;
+          case "Prime":
+            searchUrl = "https://www.amazon.com/s?k=" + encodeURIComponent(searchQuery) + "&i=prime-instant-video";
+            break;
+          case "Hulu":
+            searchUrl = "https://www.hulu.com/search?q=" + encodeURIComponent(searchQuery);
+            break;
+          case "Apple":
+            searchUrl = "https://tv.apple.com/us/search?term=" + encodeURIComponent(searchQuery);
+            break;
+          default:
+            searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchQuery);
+            break;
+        }
+        
+        window.location.href = searchUrl;
+      });
+    </script>
   </body>
 </html>
+
