@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head>
+    <meta charset="UTF-8">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head> 
+  <body>  
+    <h1>Movie Search</h1>
+    <form action="https://www.Google.com/search" method="GET"></form>
+   <p>
+      <label for="searchbox">Movie Search:</label>
+      <input type="text" name="q" id="searchbox">
+
+   </p>
+   <p>
+      <label for="selectmovie">Favorite Picks:</label>
+      <select name="q" id="Favorites">
+        <option></option>
+        <option value="Wolverine">Wolverine</option>
+        <option value="Spider-Man">Spider-Man</option>
+        <option value="Grown-Ups">Grown-Ups</option>
+        <option value="Fast and Furious">Fast and Furious</option>
+        <option value="Iron-Man">Iron-Man</option>
+      </select>
+  </p>
+<h3>Select a Platform:</h3>
+  <p>
+      <input type="radio" name="newwindow" value="Netflix" id="Netflix">
+      <label for="Netflix"><a href="https://www.netflix.com/">Netflix</a></label>
+  </p>
+  <p>
+    <input type="radio" name="newwindow" value="Disney" id="Disney">
+    <label for="Disney"><a href="https://www.disneyplus.com/">Disney+</a></label>
+  </p>
+  <p>
+    <input type="radio" name="newwindow" value="Prime" id="Prime">
+    <label for="Prime"><a href="https://www.amazon.com/Amazon-Video/b?ie=UTF8&node=2858778011">Amazon Prime Video</a></label>
+  </p>
+  <p>
+    <input type="radio" name="as_sitesearch" value="Hulu" id="Hulu">
+    <label for="Hulu">Hulu</label>
+  </p>
+  <p>
+    <input type="radio" name="as_epq" value="Apple" id="Apple">
+    <label for="Apple"><a href="https://www.apple.com/apple-tv-plus/">Apple TV+</a></label>
+  </p>
+  <p>
+    <input type="radio" name="qdr:All" value="All" id="All">
+    <label for="All">Find a Streaming Platform</label>
+  </p>
+  <p>
+    <input type="submit">
+  </p>
+  </body>
+</html>
