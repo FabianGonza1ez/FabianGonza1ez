@@ -1,89 +1,126 @@
 <!DOCTYPE html> 
 <html lang="en"> 
-  <head>
-    <meta charset="UTF-8">
-    <title>Movie Search</title>
-    <link rel="stylesheet" href="css/main.css">
-  </head> 
-  <body>  
-    <h1>Movie Search</h1>
-    <form id="searchForm">
-       <p>
-          <label for="searchbox">Movie Search:</label>
-          <input type="text" name="q" id="searchbox">
-       </p>
-       <p>
-          <label for="selectmovie">Favorite Picks:</label>
-          <select name="q" id="Favorites">
-            <option></option>
-            <option value="Wolverine">Wolverine</option>
-            <option value="Spider-Man">Spider-Man</option>
-            <option value="Grown-Ups">Grown-Ups</option>
-            <option value="Fast and Furious">Fast and Furious</option>
-            <option value="Iron-Man">Iron-Man</option>
-          </select>
-      </p>
-    <h3>Select a Platform:</h3>
-    <p>
-        <input type="radio" name="platform" value="Netflix" id="Netflix">
-        <label for="Netflix">Netflix</label>
-    </p>
-    <p>
-      <input type="radio" name="platform" value="Disney" id="Disney">
-      <label for="Disney">Disney+</label>
-    </p>
-    <p>
-      <input type="radio" name="platform" value="Prime" id="Prime">
-      <label for="Prime">Amazon Prime Video</label>
-    </p>
-    <p>
-      <input type="radio" name="platform" value="Hulu" id="Hulu">
-      <label for="Hulu">Hulu</label>
-    </p>
-    <p>
-      <input type="radio" name="platform" value="Apple" id="Apple">
-      <label for="Apple">Apple TV+</label>
-    </p>
-    <p>
-      <input type="radio" name="platform" value="All" id="All">
-      <label for="All">Find a Streaming Platform</label>
-    </p>
-    <p>
-      <input type="submit" value="Search">
-    </p>
-    </form>
-
-    <script>
-      document.getElementById("searchForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        var searchQuery = document.getElementById("searchbox").value;
-        var platform = document.querySelector('input[name="platform"]:checked').value;
-        var searchUrl;
-        
-        switch(platform) {
-          case "Netflix":
-            searchUrl = "https://www.netflix.com/search?q=" + encodeURIComponent(searchQuery);
-            break;
-          case "Disney":
-            searchUrl = "https://www.disneyplus.com/search?q=" + encodeURIComponent(searchQuery);
-            break;
-          case "Prime":
-            searchUrl = "https://www.amazon.com/s?k=" + encodeURIComponent(searchQuery) + "&i=prime-instant-video";
-            break;
-          case "Hulu":
-            searchUrl = "https://www.hulu.com/search?q=" + encodeURIComponent(searchQuery);
-            break;
-          case "Apple":
-            searchUrl = "https://tv.apple.com/us/search?term=" + encodeURIComponent(searchQuery);
-            break;
-          default:
-            searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchQuery);
-            break;
-        }
-        
-        window.location.href = searchUrl;
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>University Power Rankings</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head> 
+<body>  
+  <h1>University Power Rankings</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>University</th>
+        <th>Rating</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Harvard University</td>
+        <td>4.8</td>
+        <td>Excellent academic programs and resources.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Stanford University</td>
+        <td>4.7</td>
+        <td>Great campus atmosphere and diverse community.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Massachusetts Institute of Technology (MIT)</td>
+        <td>4.6</td>
+        <td>Top-notch faculty and cutting-edge research opportunities.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>California Institute of Technology (Caltech)</td>
+        <td>4.5</td>
+        <td>Intense academic environment with strong emphasis on STEM.</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Princeton University</td>
+        <td>4.4</td>
+        <td>Beautiful campus and supportive academic community.</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>University of Cambridge</td>
+        <td>4.3</td>
+        <td>Rich history and world-renowned faculty.</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>University of Oxford</td>
+        <td>4.3</td>
+        <td>Stimulating academic environment with diverse opportunities.</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Yale University</td>
+        <td>4.2</td>
+        <td>Strong emphasis on interdisciplinary studies and research.</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Columbia University</td>
+        <td>4.1</td>
+        <td>Dynamic urban campus with extensive academic offerings.</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>University of Chicago</td>
+        <td>4.0</td>
+        <td>Intellectually stimulating environment and strong academic rigor.</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>University of California, Berkeley</td>
+        <td>4.0</td>
+        <td>Leading research institution with diverse student body.</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>University of Michigan</td>
+        <td>3.9</td>
+        <td>Comprehensive academic programs and vibrant campus life.</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>University College London (UCL)</td>
+        <td>3.8</td>
+        <td>Global perspective and innovative research initiatives.</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Northwestern University</td>
+        <td>3.8</td>
+        <td>Strong focus on interdisciplinary studies and research collaborations.</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>University of Pennsylvania</td>
+        <td>3.7</td>
+        <td>Dynamic learning community and extensive alumni network.</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
 </html>
-
