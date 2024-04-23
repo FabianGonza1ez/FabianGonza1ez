@@ -6,53 +6,61 @@
     <link rel="stylesheet" href="css/main.css">
   </head> 
   <body>  
-    <h1>Movie Search</h1>
-    <form action="https://www.google.com/search" method="GET" target="_blank"></form>
-   <p>
-      <label for="searchbox">Movie Search:</label>
-      <input type="text" name="q" id="searchbox">
-
-   </p>
-   <p>
-      <label for="selectmovie">Favorite Picks:</label>
-      <select name="q" id="Favorites">
-        <option></option>
-        <option value="Wolverine">Wolverine</option>
-        <option value="Spider-Man">Spider-Man</option>
-        <option value="Grown-Ups">Grown-Ups</option>
-        <option value="Fast and Furious">Fast and Furious</option>
-        <option value="Iron-Man">Iron-Man</option>
-      </select>
-  </p>
-<h3>Select a Platform:</h3>
+     <h1>Movie Search</h1>
+        <form action="https://www.google.com/search" method="GET" target="_blank">
+        <p>
+        <label for="searchbox">Search String</label>
+        <input type="text" name="q" id="searchbox">
+        </p>
+       <p>
+        <label for="site">Select a Site</label>
+        <select name="as_sitesearch" id="site">
+           <option value="">Select a Platform:</option>
+           <option value="https://www.netflix.com/">Netflix</option>
+           <option value="https://www.amazon.com/Amazon-Video/b?ie=UTF8&node=2858778011">Amazon Prime</option>
+           <option value="https://tv.apple.com/">Apple TV</option>
+           <option value="https://www.hulu.com/welcome?orig_referrer=https%3A%2F%2Fwww.google.com%2F">Hulu</option>
+           <option value="https://www.disneyplus.com/brand/disney">Disney +</option>
+         </select>
+        </p>
+        <p>
+          <label for="phrase">Select a Rating</label>
+          <select name="as_epq" id="phrase">
+          <option value="">Movie Rating:</option>
+          <option value="html">PG-13</option>
+          <option value="css">Rated R</option>
+          </select
+        </p>
+<h3>Select a Genre:</h3>
   <p>
-      <input type="checkbox" name="newwindow" value="Netflix.com" id="Netflix.com">
-      <label for="Netflix.com">Netflix</label>
+      <input type="checkbox" name="newwindow" value="1" id="checkwindow">
+      <label for="checkwindow">Horror</label>
       
   </p>
   <p>
-    <input type="checkbox" name="newwindow" value="Disney" id="Disney">
-    <label for="Disney">Disney+</label>
+    <input type="checkbox" name="newwindow" value="Comedy" id="Comedy">
+    <label for="Comedy">Comedy</label>
   </p>
   <p>
-    <input type="checkbox" name="newwindow" value="Prime" id="Prime">
-    <label for="Prime">Amazon Prime</label>
+    <input type="checkbox" name="newwindow" value="Action" id="Action">
+    <label for="Action">Action</label>
   </p>
   <p>
-    <input type="checkbox" name="as_sitesearch" value="Hulu" id="Hulu">
-    <label for="Hulu">Hulu</label>
+    <input type="checkbox" name="as_sitesearch" value="Thriller" id="Thriller">
+    <label for="Thriller">Thriller</label>
   </p>
   <p>
-    <input type="checkbox" name="as_epq" value="Apple" id="Apple">
-    <label for="Apple">Apple TV</label>
+    <input type="checkbox" name="as_epq" value="Rom-Com" id="Rom-Com">
+    <label for="Rom-Com">Rom-Com</label>
   </p>
   <p>
     <input type="checkbox" name="qdr:All" value="All" id="All">
-    <label for="All">Find a Streaming Platform</label>
+    <label for="All">All Genres</label>
   </p>
   <p>
     <input type="Submit">
   </p>
+    <a href="index.html"><img height="50" src="Images/button_home.png" alt="HOME"></a>
   </body>
 
 
